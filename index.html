@@ -201,7 +201,7 @@
       </div>
     </section>
     
-    <section id="featured" class="content-section alternate" aria-labelledby="featured-title">
+    <section id="featured" class="content-section alternate" aria-labelledby="featured-title" data-products-section>
       <div class="section-container">
         <header class="section-header">
           <h2 id="featured-title">Featured Products</h2>
@@ -210,56 +210,220 @@
           </p>
         </header>
         
-        <div class="grid-layout four-columns" role="list">
-          <article class="product-card" role="listitem">
+        <div class="grid-layout four-columns" role="list" data-product-grid>
+          <article class="product-card" role="listitem" data-product-card data-category="gowns" data-product-id="prod-001" itemscope itemtype="https://schema.org/Product">
             <div class="product-image aspect-square">
-              <div style="background: var(--color-neutral-200); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: var(--color-neutral-600);" aria-hidden="true">
-                Product 1
-              </div>
+              <img 
+                src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=600&h=600&fit=crop" 
+                alt="Elegant Evening Dress - Flowing red gown with sophisticated silhouette"
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="600"
+                itemprop="image"
+              >
             </div>
             <div class="product-info">
-              <h3>Elegant Evening Dress</h3>
-              <p class="product-price">$299.00</p>
-              <a href="#product-1" class="btn btn-primary btn-sm btn-block">View Details</a>
+              <p class="product-category" itemprop="category">Gowns</p>
+              <h3 itemprop="name" data-product-name>Elegant Evening Dress</h3>
+              <p class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                <span itemprop="price" content="299.00">$299.00</span>
+                <meta itemprop="priceCurrency" content="USD">
+                <meta itemprop="availability" content="https://schema.org/InStock">
+              </p>
+              <a href="#product-1" class="btn btn-primary btn-sm btn-block" aria-label="View details for Elegant Evening Dress">View Details</a>
             </div>
           </article>
           
-          <article class="product-card" role="listitem">
+          <article class="product-card" role="listitem" data-product-card data-category="gowns" data-product-id="prod-002" itemscope itemtype="https://schema.org/Product">
             <div class="product-image aspect-square">
-              <div style="background: var(--color-neutral-200); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: var(--color-neutral-600);" aria-hidden="true">
-                Product 2
-              </div>
+              <img 
+                src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=600&h=600&fit=crop" 
+                alt="Classic Tailored Suit - Professional navy blue suit with modern cut"
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="600"
+                itemprop="image"
+              >
             </div>
             <div class="product-info">
-              <h3>Classic Tailored Suit</h3>
-              <p class="product-price">$499.00</p>
-              <a href="#product-2" class="btn btn-primary btn-sm btn-block">View Details</a>
+              <p class="product-category" itemprop="category">Gowns</p>
+              <h3 itemprop="name" data-product-name>Classic Tailored Suit</h3>
+              <p class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                <span itemprop="price" content="499.00">$499.00</span>
+                <meta itemprop="priceCurrency" content="USD">
+                <meta itemprop="availability" content="https://schema.org/InStock">
+              </p>
+              <a href="#product-2" class="btn btn-primary btn-sm btn-block" aria-label="View details for Classic Tailored Suit">View Details</a>
             </div>
           </article>
           
-          <article class="product-card" role="listitem">
+          <article class="product-card" role="listitem" data-product-card data-category="bags" data-product-id="prod-003" itemscope itemtype="https://schema.org/Product">
             <div class="product-image aspect-square">
-              <div style="background: var(--color-neutral-200); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: var(--color-neutral-600);" aria-hidden="true">
-                Product 3
-              </div>
+              <img 
+                src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&h=600&fit=crop" 
+                alt="Designer Handbag - Luxury leather handbag in classic brown"
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="600"
+                itemprop="image"
+              >
             </div>
             <div class="product-info">
-              <h3>Designer Handbag</h3>
-              <p class="product-price">$399.00</p>
-              <a href="#product-3" class="btn btn-primary btn-sm btn-block">View Details</a>
+              <p class="product-category" itemprop="category">Bags</p>
+              <h3 itemprop="name" data-product-name>Designer Handbag</h3>
+              <p class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                <span itemprop="price" content="399.00">$399.00</span>
+                <meta itemprop="priceCurrency" content="USD">
+                <meta itemprop="availability" content="https://schema.org/InStock">
+              </p>
+              <a href="#product-3" class="btn btn-primary btn-sm btn-block" aria-label="View details for Designer Handbag">View Details</a>
             </div>
           </article>
           
-          <article class="product-card" role="listitem">
+          <article class="product-card" role="listitem" data-product-card data-category="bags" data-product-id="prod-004" itemscope itemtype="https://schema.org/Product">
             <div class="product-image aspect-square">
-              <div style="background: var(--color-neutral-200); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: var(--color-neutral-600);" aria-hidden="true">
-                Product 4
-              </div>
+              <img 
+                src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=600&h=600&fit=crop" 
+                alt="Luxury Watch - Premium timepiece with elegant design"
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="600"
+                itemprop="image"
+              >
             </div>
             <div class="product-info">
-              <h3>Luxury Watch</h3>
-              <p class="product-price">$799.00</p>
-              <a href="#product-4" class="btn btn-primary btn-sm btn-block">View Details</a>
+              <p class="product-category" itemprop="category">Bags</p>
+              <h3 itemprop="name" data-product-name>Luxury Watch</h3>
+              <p class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                <span itemprop="price" content="799.00">$799.00</span>
+                <meta itemprop="priceCurrency" content="USD">
+                <meta itemprop="availability" content="https://schema.org/InStock">
+              </p>
+              <a href="#product-4" class="btn btn-primary btn-sm btn-block" aria-label="View details for Luxury Watch">View Details</a>
+            </div>
+          </article>
+          
+          <article class="product-card" role="listitem" data-product-card data-category="shoes" data-product-id="prod-005" itemscope itemtype="https://schema.org/Product">
+            <div class="product-image aspect-square">
+              <img 
+                src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&h=600&fit=crop" 
+                alt="Classic Heels - Elegant black heels perfect for any occasion"
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="600"
+                itemprop="image"
+              >
+            </div>
+            <div class="product-info">
+              <p class="product-category" itemprop="category">Shoes</p>
+              <h3 itemprop="name" data-product-name>Classic Heels</h3>
+              <p class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                <span itemprop="price" content="249.00">$249.00</span>
+                <meta itemprop="priceCurrency" content="USD">
+                <meta itemprop="availability" content="https://schema.org/InStock">
+              </p>
+              <a href="#product-5" class="btn btn-primary btn-sm btn-block" aria-label="View details for Classic Heels">View Details</a>
+            </div>
+          </article>
+          
+          <article class="product-card" role="listitem" data-product-card data-category="shoes" data-product-id="prod-006" itemscope itemtype="https://schema.org/Product">
+            <div class="product-image aspect-square">
+              <img 
+                src="https://images.unsplash.com/photo-1603808033192-082d6919d3e1?w=600&h=600&fit=crop" 
+                alt="Designer Sneakers - Contemporary white sneakers with premium materials"
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="600"
+                itemprop="image"
+              >
+            </div>
+            <div class="product-info">
+              <p class="product-category" itemprop="category">Shoes</p>
+              <h3 itemprop="name" data-product-name>Designer Sneakers</h3>
+              <p class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                <span itemprop="price" content="349.00">$349.00</span>
+                <meta itemprop="priceCurrency" content="USD">
+                <meta itemprop="availability" content="https://schema.org/InStock">
+              </p>
+              <a href="#product-6" class="btn btn-primary btn-sm btn-block" aria-label="View details for Designer Sneakers">View Details</a>
+            </div>
+          </article>
+          
+          <article class="product-card" role="listitem" data-product-card data-category="gowns" data-product-id="prod-007" itemscope itemtype="https://schema.org/Product">
+            <div class="product-image aspect-square">
+              <img 
+                src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&h=600&fit=crop" 
+                alt="Cocktail Dress - Sophisticated black cocktail dress with modern design"
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="600"
+                itemprop="image"
+              >
+            </div>
+            <div class="product-info">
+              <p class="product-category" itemprop="category">Gowns</p>
+              <h3 itemprop="name" data-product-name>Cocktail Dress</h3>
+              <p class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                <span itemprop="price" content="279.00">$279.00</span>
+                <meta itemprop="priceCurrency" content="USD">
+                <meta itemprop="availability" content="https://schema.org/InStock">
+              </p>
+              <a href="#product-7" class="btn btn-primary btn-sm btn-block" aria-label="View details for Cocktail Dress">View Details</a>
+            </div>
+          </article>
+          
+          <article class="product-card" role="listitem" data-product-card data-category="bags" data-product-id="prod-008" itemscope itemtype="https://schema.org/Product">
+            <div class="product-image aspect-square">
+              <img 
+                src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&h=600&fit=crop" 
+                alt="Leather Tote - Spacious leather tote bag in camel brown"
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="600"
+                itemprop="image"
+              >
+            </div>
+            <div class="product-info">
+              <p class="product-category" itemprop="category">Bags</p>
+              <h3 itemprop="name" data-product-name>Leather Tote</h3>
+              <p class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                <span itemprop="price" content="329.00">$329.00</span>
+                <meta itemprop="priceCurrency" content="USD">
+                <meta itemprop="availability" content="https://schema.org/InStock">
+              </p>
+              <a href="#product-8" class="btn btn-primary btn-sm btn-block" aria-label="View details for Leather Tote">View Details</a>
+            </div>
+          </article>
+          
+          <article class="product-card" role="listitem" data-product-card data-category="shoes" data-product-id="prod-009" itemscope itemtype="https://schema.org/Product">
+            <div class="product-image aspect-square">
+              <img 
+                src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&h=600&fit=crop" 
+                alt="Ankle Boots - Stylish leather ankle boots in black"
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="600"
+                itemprop="image"
+              >
+            </div>
+            <div class="product-info">
+              <p class="product-category" itemprop="category">Shoes</p>
+              <h3 itemprop="name" data-product-name>Ankle Boots</h3>
+              <p class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                <span itemprop="price" content="289.00">$289.00</span>
+                <meta itemprop="priceCurrency" content="USD">
+                <meta itemprop="availability" content="https://schema.org/InStock">
+              </p>
+              <a href="#product-9" class="btn btn-primary btn-sm btn-block" aria-label="View details for Ankle Boots">View Details</a>
             </div>
           </article>
         </div>
