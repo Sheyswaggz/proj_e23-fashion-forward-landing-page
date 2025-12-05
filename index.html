@@ -26,8 +26,10 @@
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/business-info.css">
   
   <script type="module" src="js/main.js" defer></script>
+  <script type="module" src="js/newsletter.js" defer></script>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>
@@ -48,6 +50,9 @@
           </li>
           <li class="nav-item">
             <a href="#featured" class="nav-link">Featured</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">Contact</a>
           </li>
           <li class="nav-item">
             <a href="#newsletter" class="nav-link">Newsletter</a>
@@ -90,6 +95,9 @@
         </li>
         <li>
           <a href="#featured" class="mobile-nav-link">Featured</a>
+        </li>
+        <li>
+          <a href="#contact" class="mobile-nav-link">Contact</a>
         </li>
         <li>
           <a href="#newsletter" class="mobile-nav-link">Newsletter</a>
@@ -430,72 +438,208 @@
       </div>
     </section>
     
-    <section id="newsletter" class="content-section" aria-labelledby="newsletter-title">
-      <div class="section-container">
-        <div class="container-narrow">
-          <header class="section-header">
-            <h2 id="newsletter-title">Stay in Style</h2>
-            <p class="section-description">
-              Subscribe to our newsletter for exclusive offers, style tips, and early access to new collections
-            </p>
-          </header>
-          
-          <form 
-            method="POST" 
-            action="/newsletter/subscribe" 
-            class="newsletter-form"
-            novalidate
-            aria-labelledby="newsletter-title"
-          >
-            <div class="flex flex-col gap-md">
-              <div class="field">
-                <label for="newsletter-email" class="sr-only">
-                  Email Address
-                </label>
-                <input 
-                  type="email" 
-                  id="newsletter-email" 
-                  name="email"
-                  placeholder="Enter your email address"
-                  required
-                  aria-required="true"
-                  aria-invalid="false"
-                  aria-describedby="newsletter-email-error"
-                  autocomplete="email"
-                  inputmode="email"
-                  class="newsletter-input"
-                >
-                <span id="newsletter-email-error" class="error" role="alert" aria-live="polite"></span>
-              </div>
-              
-              <div class="checkbox-wrapper">
-                <input 
-                  type="checkbox" 
-                  id="newsletter-consent" 
-                  name="consent"
-                  required
-                  aria-required="true"
-                  aria-describedby="newsletter-consent-description"
-                >
-                <label for="newsletter-consent">
-                  I agree to receive marketing communications from Fashion Forward
-                </label>
-                <span id="newsletter-consent-description" class="sr-only">
-                  You can unsubscribe at any time
-                </span>
-              </div>
-              
-              <button 
-                type="submit"
-                class="btn btn-primary btn-lg btn-block"
-                aria-busy="false"
-                aria-live="polite"
-              >
-                <span class="button-text">Subscribe Now</span>
-              </button>
+    <section id="contact" class="content-section business-info" aria-labelledby="contact-title" itemscope itemtype="https://schema.org/LocalBusiness">
+      <div class="section-container business-info-container">
+        <header class="section-header">
+          <h2 id="contact-title" itemprop="name">Get in Touch</h2>
+          <p class="section-description">
+            Visit our showroom, reach out to our team, or connect with us on social media
+          </p>
+        </header>
+        
+        <div class="business-info-grid">
+          <article class="info-card" role="listitem">
+            <div class="info-card-icon" aria-hidden="true">📍</div>
+            <div class="info-card-content">
+              <h3 class="info-card-title">Visit Our Showroom</h3>
+              <address class="info-card-text" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                <span itemprop="streetAddress">123 Fashion Avenue</span><br>
+                <span itemprop="addressLocality">New York</span>, <span itemprop="addressRegion">NY</span> <span itemprop="postalCode">10001</span><br>
+                <span itemprop="addressCountry">United States</span>
+              </address>
+              <a href="https://maps.google.com/?q=123+Fashion+Avenue+New+York+NY+10001" class="info-card-link" target="_blank" rel="noopener noreferrer" aria-label="View location on Google Maps">
+                Get Directions →
+              </a>
             </div>
-          </form>
+          </article>
+          
+          <article class="info-card" role="listitem">
+            <div class="info-card-icon" aria-hidden="true">🕐</div>
+            <div class="info-card-content">
+              <h3 class="info-card-title">Store Hours</h3>
+              <ul class="hours-list" role="list">
+                <li class="hours-item">
+                  <span class="hours-day">Monday - Friday</span>
+                  <time class="hours-time" itemprop="openingHours" content="Mo-Fr 10:00-20:00">10:00 AM - 8:00 PM</time>
+                </li>
+                <li class="hours-item">
+                  <span class="hours-day">Saturday</span>
+                  <time class="hours-time" itemprop="openingHours" content="Sa 11:00-19:00">11:00 AM - 7:00 PM</time>
+                </li>
+                <li class="hours-item">
+                  <span class="hours-day">Sunday</span>
+                  <time class="hours-time" itemprop="openingHours" content="Su 12:00-18:00">12:00 PM - 6:00 PM</time>
+                </li>
+              </ul>
+            </div>
+          </article>
+          
+          <article class="info-card" role="listitem">
+            <div class="info-card-icon" aria-hidden="true">📞</div>
+            <div class="info-card-content">
+              <h3 class="info-card-title">Contact Information</h3>
+              <p class="info-card-text">
+                <strong>Phone:</strong><br>
+                <a href="tel:+12125551234" class="info-card-link" itemprop="telephone">+1 (212) 555-1234</a>
+              </p>
+              <p class="info-card-text">
+                <strong>Email:</strong><br>
+                <a href="mailto:hello@fashionforward.com" class="info-card-link" itemprop="email">hello@fashionforward.com</a>
+              </p>
+              <div class="social-links" role="navigation" aria-label="Social media links">
+                <a 
+                  href="https://facebook.com/fashionforward" 
+                  class="social-link" 
+                  aria-label="Follow us on Facebook"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  itemprop="sameAs"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                </a>
+                <a 
+                  href="https://instagram.com/fashionforward" 
+                  class="social-link" 
+                  aria-label="Follow us on Instagram"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  itemprop="sameAs"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+                </a>
+                <a 
+                  href="https://twitter.com/fashionforward" 
+                  class="social-link" 
+                  aria-label="Follow us on Twitter"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  itemprop="sameAs"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
         </div>
+      </div>
+      
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Fashion Forward",
+        "image": "https://fashionforward.example.com/og-image.jpg",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "123 Fashion Avenue",
+          "addressLocality": "New York",
+          "addressRegion": "NY",
+          "postalCode": "10001",
+          "addressCountry": "US"
+        },
+        "telephone": "+12125551234",
+        "email": "hello@fashionforward.com",
+        "url": "https://fashionforward.example.com",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "10:00",
+            "closes": "20:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "11:00",
+            "closes": "19:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Sunday",
+            "opens": "12:00",
+            "closes": "18:00"
+          }
+        ],
+        "sameAs": [
+          "https://facebook.com/fashionforward",
+          "https://instagram.com/fashionforward",
+          "https://twitter.com/fashionforward"
+        ]
+      }
+      </script>
+    </section>
+    
+    <section id="newsletter" class="content-section newsletter" aria-labelledby="newsletter-title">
+      <div class="section-container newsletter-container">
+        <header class="section-header newsletter-header">
+          <h2 id="newsletter-title" class="newsletter-title">Stay in Style</h2>
+          <p class="section-description newsletter-description">
+            Subscribe to our newsletter for exclusive offers, style tips, and early access to new collections
+          </p>
+        </header>
+        
+        <form 
+          method="POST" 
+          action="/newsletter/subscribe" 
+          class="newsletter-form"
+          novalidate
+          aria-labelledby="newsletter-title"
+          data-newsletter-form
+        >
+          <div class="newsletter-input-wrapper">
+            <input 
+              type="email" 
+              id="newsletter-email" 
+              name="email"
+              placeholder="Enter your email address"
+              required
+              aria-required="true"
+              aria-invalid="false"
+              aria-describedby="newsletter-error"
+              autocomplete="email"
+              inputmode="email"
+              class="newsletter-input"
+              data-newsletter-email
+            >
+            <span class="newsletter-input-icon" aria-hidden="true"></span>
+            <span id="newsletter-error" class="newsletter-error is-hidden" role="alert" aria-live="polite" data-newsletter-error></span>
+          </div>
+          
+          <button 
+            type="submit"
+            class="newsletter-submit"
+            aria-busy="false"
+            data-newsletter-submit
+          >
+            <span class="newsletter-submit-text">Subscribe</span>
+          </button>
+        </form>
+        
+        <div class="newsletter-success is-hidden" data-newsletter-success>
+          <div class="newsletter-success-icon" aria-hidden="true">✓</div>
+          <h3 class="newsletter-success-title">Thank You!</h3>
+          <p class="newsletter-success-text">Check your email to confirm your subscription.</p>
+        </div>
+        
+        <p class="newsletter-privacy">
+          By subscribing, you agree to our <a href="/privacy" target="_blank" rel="noopener">Privacy Policy</a> and consent to receive marketing communications. You can unsubscribe at any time.
+        </p>
       </div>
     </section>
   </main>
