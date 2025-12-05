@@ -1,0 +1,463 @@
+/**
+ * Performance Optimizations - Fashion Forward Landing Page
+ * 
+ * Critical CSS for above-the-fold content, optimized font loading,
+ * efficient animations, mobile touch optimizations, and reduced complexity.
+ * Implements modern performance best practices for fast page loads.
+ */
+
+/* ============================================
+   CRITICAL CSS - Above-the-Fold Content
+   ============================================ */
+
+@layer critical {
+  /* Optimize initial viewport rendering */
+  html {
+    /* Prevent layout shift during font loading */
+    font-display: swap;
+    /* Enable hardware acceleration */
+    transform: translateZ(0);
+    /* Optimize text rendering */
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Critical hero section styles */
+  .hero {
+    /* Use CSS containment for performance */
+    contain: layout style paint;
+    /* Optimize rendering with will-change */
+    will-change: transform;
+    /* Prevent unnecessary repaints */
+    backface-visibility: hidden;
+  }
+
+  /* Critical navigation styles */
+  header {
+    contain: layout style;
+    /* Optimize fixed positioning */
+    transform: translateZ(0);
+  }
+}
+
+/* ============================================
+   FONT LOADING OPTIMIZATION
+   ============================================ */
+
+/* Preload critical fonts with font-display: swap */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  /* Size adjustments to prevent layout shift */
+  size-adjust: 100%;
+  ascent-override: 95%;
+  descent-override: 105%;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 100%;
+  ascent-override: 90%;
+  descent-override: 110%;
+}
+
+/* Fallback font matching to reduce CLS */
+.font-loading {
+  font-family: var(--font-family-secondary), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ============================================
+   EFFICIENT ANIMATIONS - Transform & Opacity Only
+   ============================================ */
+
+/* Use transform and opacity for 60fps animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px) translateZ(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateZ(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateZ(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateZ(0);
+  }
+}
+
+/* Optimized slide animation */
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(-30px) translateZ(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) translateZ(0);
+  }
+}
+
+/* Performance-optimized transitions */
+.animate-fade-in {
+  animation: fade-in var(--duration-medium) var(--ease-out) forwards;
+  /* Use will-change sparingly */
+  will-change: opacity;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up var(--duration-medium) var(--ease-elegant) forwards;
+  will-change: opacity, transform;
+}
+
+.animate-scale-in {
+  animation: scale-in var(--duration-medium) var(--ease-elegant) forwards;
+  will-change: opacity, transform;
+}
+
+/* Remove will-change after animation completes */
+.animate-fade-in,
+.animate-fade-in-up,
+.animate-scale-in {
+  animation-fill-mode: forwards;
+}
+
+@supports (animation-timeline: view()) {
+  .animate-fade-in,
+  .animate-fade-in-up,
+  .animate-scale-in {
+    will-change: auto;
+  }
+}
+
+/* Stagger animation delays for sequential reveals */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+
+/* ============================================
+   MOBILE TOUCH OPTIMIZATIONS
+   ============================================ */
+
+/* Optimize touch targets - minimum 44x44px */
+.touch-target {
+  min-width: 44px;
+  min-height: 44px;
+  /* Improve touch responsiveness */
+  touch-action: manipulation;
+  /* Prevent tap highlight on mobile */
+  -webkit-tap-highlight-color: transparent;
+  /* Optimize for touch scrolling */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Remove 300ms tap delay on mobile */
+a,
+button,
+input,
+select,
+textarea {
+  touch-action: manipulation;
+}
+
+/* Optimize button interactions */
+.btn {
+  /* Prevent double-tap zoom */
+  touch-action: manipulation;
+  /* Remove tap highlight */
+  -webkit-tap-highlight-color: transparent;
+  /* Optimize active state */
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Active state feedback for touch */
+.btn:active {
+  transform: translateY(1px) translateZ(0);
+  transition: transform var(--duration-instant) var(--ease-out);
+}
+
+/* Optimize scrollable areas */
+.scroll-container {
+  /* Enable momentum scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
+  /* Optimize scroll performance */
+  overflow: auto;
+  overscroll-behavior: contain;
+  /* Prevent scroll chaining */
+  overscroll-behavior-y: contain;
+}
+
+/* Touch-friendly spacing */
+@media (max-width: 768px) {
+  .touch-spacing {
+    padding: var(--space-4);
+    gap: var(--space-4);
+  }
+  
+  /* Increase tap target size on mobile */
+  .mobile-touch-target {
+    min-width: 48px;
+    min-height: 48px;
+    padding: var(--space-3);
+  }
+}
+
+/* ============================================
+   IMAGE LAZY LOADING OPTIMIZATION
+   ============================================ */
+
+/* Optimize images with aspect ratio to prevent CLS */
+.lazy-image {
+  /* Prevent layout shift */
+  aspect-ratio: attr(width) / attr(height);
+  /* Optimize image rendering */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  /* Smooth loading transition */
+  opacity: 0;
+  transition: opacity var(--duration-medium) var(--ease-out);
+}
+
+.lazy-image.loaded {
+  opacity: 1;
+}
+
+/* Blur-up placeholder technique */
+.lazy-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-neutral-100);
+}
+
+.lazy-image-placeholder {
+  position: absolute;
+  inset: 0;
+  filter: blur(10px);
+  transform: scale(1.1);
+  transition: opacity var(--duration-medium) var(--ease-out);
+}
+
+.lazy-image-wrapper.loaded .lazy-image-placeholder {
+  opacity: 0;
+}
+
+/* ============================================
+   CONTENT VISIBILITY & CONTAINMENT
+   ============================================ */
+
+/* Optimize off-screen content rendering */
+.defer-render {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}
+
+/* Optimize product cards */
+.product-card {
+  contain: layout style paint;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 400px;
+}
+
+/* Optimize category sections */
+.category-section {
+  contain: layout style;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 600px;
+}
+
+/* ============================================
+   REDUCED CSS COMPLEXITY
+   ============================================ */
+
+/* Simplified selectors for better performance */
+.card {
+  /* Avoid deep nesting */
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.card-image {
+  /* Direct child selectors only */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: var(--space-4);
+}
+
+/* Avoid expensive CSS properties */
+.optimized-shadow {
+  /* Use simpler shadows */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  /* Avoid filter effects when possible */
+}
+
+/* ============================================
+   CRITICAL RENDERING PATH OPTIMIZATION
+   ============================================ */
+
+/* Inline critical styles for above-the-fold */
+.hero-content {
+  /* Minimize initial render blocking */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: var(--space-fluid-lg);
+}
+
+/* Defer non-critical styles */
+.below-fold {
+  /* Load after initial paint */
+  contain: content;
+}
+
+/* ============================================
+   PERFORMANCE MONITORING HELPERS
+   ============================================ */
+
+/* Mark performance-critical elements */
+[data-performance-critical] {
+  contain: layout style paint;
+  will-change: auto;
+}
+
+/* Optimize animations for performance monitoring */
+@media (prefers-reduced-motion: no-preference) {
+  .performance-animation {
+    animation-duration: var(--duration-medium);
+    animation-timing-function: var(--ease-elegant);
+  }
+}
+
+/* ============================================
+   MOBILE-SPECIFIC OPTIMIZATIONS
+   ============================================ */
+
+@media (max-width: 768px) {
+  /* Reduce animation complexity on mobile */
+  .mobile-simple-animation {
+    animation: fade-in var(--duration-fast) var(--ease-out);
+  }
+  
+  /* Optimize mobile scrolling */
+  body {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: none;
+  }
+  
+  /* Reduce shadow complexity on mobile */
+  .mobile-shadow {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Optimize mobile images */
+  img {
+    /* Prevent image scaling issues */
+    max-width: 100%;
+    height: auto;
+    /* Optimize rendering */
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* ============================================
+   REDUCED MOTION SUPPORT
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  /* Remove will-change for reduced motion */
+  .animate-fade-in,
+  .animate-fade-in-up,
+  .animate-scale-in {
+    will-change: auto;
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ============================================
+   GPU ACCELERATION HELPERS
+   ============================================ */
+
+/* Force GPU acceleration for smooth animations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Optimize transforms */
+.transform-optimized {
+  /* Use 3D transforms for GPU acceleration */
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+/* ============================================
+   PRINT OPTIMIZATION
+   ============================================ */
+
+@media print {
+  /* Remove animations for print */
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  /* Optimize images for print */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+  
+  /* Remove performance optimizations for print */
+  .defer-render,
+  .product-card,
+  .category-section {
+    content-visibility: visible;
+    contain: none;
+  }
+}

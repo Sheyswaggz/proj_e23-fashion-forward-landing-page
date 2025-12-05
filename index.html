@@ -22,14 +22,23 @@
   <meta name="theme-color" content="hsl(270, 45%, 45%)" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="hsl(270, 65%, 12%)" media="(prefers-color-scheme: dark)">
   
+  <link rel="dns-prefetch" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  
+  <link rel="preload" href="css/reset.css" as="style">
+  <link rel="preload" href="css/variables.css" as="style">
+  <link rel="preload" href="css/base.css" as="style">
+  
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/business-info.css">
+  <link rel="stylesheet" href="css/performance.css">
   
   <script type="module" src="js/main.js" defer></script>
   <script type="module" src="js/newsletter.js" defer></script>
+  <script type="module" src="js/performance.js" defer></script>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>
@@ -63,7 +72,7 @@
       <div class="header-actions">
         <button 
           type="button" 
-          class="mobile-menu-toggle" 
+          class="mobile-menu-toggle touch-target" 
           aria-label="Toggle mobile menu"
           aria-expanded="false"
           aria-controls="mobile-nav"
@@ -119,13 +128,13 @@
             Elevate Your Style with Timeless Elegance
           </p>
           <div class="flex gap-md flex-wrap justify-center">
-            <a href="#shoes" class="btn btn-primary btn-lg" aria-label="Shop shoes collection">
+            <a href="#shoes" class="btn btn-primary btn-lg touch-target" aria-label="Shop shoes collection">
               Shop Shoes
             </a>
-            <a href="#bags" class="btn btn-outline btn-lg" aria-label="Shop bags collection">
+            <a href="#bags" class="btn btn-outline btn-lg touch-target" aria-label="Shop bags collection">
               Shop Bags
             </a>
-            <a href="#gowns" class="btn btn-outline btn-lg" aria-label="Shop gowns collection">
+            <a href="#gowns" class="btn btn-outline btn-lg touch-target" aria-label="Shop gowns collection">
               Shop Gowns
             </a>
           </div>
@@ -218,7 +227,7 @@
           </p>
         </header>
         
-        <div class="grid-layout four-columns" role="list" data-product-grid>
+        <div class="grid-layout four-columns defer-render" role="list" data-product-grid>
           <article class="product-card" role="listitem" data-product-card data-category="gowns" data-product-id="prod-001" itemscope itemtype="https://schema.org/Product">
             <div class="product-image aspect-square">
               <img 
@@ -239,7 +248,7 @@
                 <meta itemprop="priceCurrency" content="USD">
                 <meta itemprop="availability" content="https://schema.org/InStock">
               </p>
-              <a href="#product-1" class="btn btn-primary btn-sm btn-block" aria-label="View details for Elegant Evening Dress">View Details</a>
+              <a href="#product-1" class="btn btn-primary btn-sm btn-block touch-target" aria-label="View details for Elegant Evening Dress">View Details</a>
             </div>
           </article>
           
@@ -263,7 +272,7 @@
                 <meta itemprop="priceCurrency" content="USD">
                 <meta itemprop="availability" content="https://schema.org/InStock">
               </p>
-              <a href="#product-2" class="btn btn-primary btn-sm btn-block" aria-label="View details for Classic Tailored Suit">View Details</a>
+              <a href="#product-2" class="btn btn-primary btn-sm btn-block touch-target" aria-label="View details for Classic Tailored Suit">View Details</a>
             </div>
           </article>
           
@@ -287,7 +296,7 @@
                 <meta itemprop="priceCurrency" content="USD">
                 <meta itemprop="availability" content="https://schema.org/InStock">
               </p>
-              <a href="#product-3" class="btn btn-primary btn-sm btn-block" aria-label="View details for Designer Handbag">View Details</a>
+              <a href="#product-3" class="btn btn-primary btn-sm btn-block touch-target" aria-label="View details for Designer Handbag">View Details</a>
             </div>
           </article>
           
@@ -311,7 +320,7 @@
                 <meta itemprop="priceCurrency" content="USD">
                 <meta itemprop="availability" content="https://schema.org/InStock">
               </p>
-              <a href="#product-4" class="btn btn-primary btn-sm btn-block" aria-label="View details for Luxury Watch">View Details</a>
+              <a href="#product-4" class="btn btn-primary btn-sm btn-block touch-target" aria-label="View details for Luxury Watch">View Details</a>
             </div>
           </article>
           
@@ -335,7 +344,7 @@
                 <meta itemprop="priceCurrency" content="USD">
                 <meta itemprop="availability" content="https://schema.org/InStock">
               </p>
-              <a href="#product-5" class="btn btn-primary btn-sm btn-block" aria-label="View details for Classic Heels">View Details</a>
+              <a href="#product-5" class="btn btn-primary btn-sm btn-block touch-target" aria-label="View details for Classic Heels">View Details</a>
             </div>
           </article>
           
@@ -359,7 +368,7 @@
                 <meta itemprop="priceCurrency" content="USD">
                 <meta itemprop="availability" content="https://schema.org/InStock">
               </p>
-              <a href="#product-6" class="btn btn-primary btn-sm btn-block" aria-label="View details for Designer Sneakers">View Details</a>
+              <a href="#product-6" class="btn btn-primary btn-sm btn-block touch-target" aria-label="View details for Designer Sneakers">View Details</a>
             </div>
           </article>
           
@@ -383,7 +392,7 @@
                 <meta itemprop="priceCurrency" content="USD">
                 <meta itemprop="availability" content="https://schema.org/InStock">
               </p>
-              <a href="#product-7" class="btn btn-primary btn-sm btn-block" aria-label="View details for Cocktail Dress">View Details</a>
+              <a href="#product-7" class="btn btn-primary btn-sm btn-block touch-target" aria-label="View details for Cocktail Dress">View Details</a>
             </div>
           </article>
           
@@ -407,7 +416,7 @@
                 <meta itemprop="priceCurrency" content="USD">
                 <meta itemprop="availability" content="https://schema.org/InStock">
               </p>
-              <a href="#product-8" class="btn btn-primary btn-sm btn-block" aria-label="View details for Leather Tote">View Details</a>
+              <a href="#product-8" class="btn btn-primary btn-sm btn-block touch-target" aria-label="View details for Leather Tote">View Details</a>
             </div>
           </article>
           
@@ -431,7 +440,7 @@
                 <meta itemprop="priceCurrency" content="USD">
                 <meta itemprop="availability" content="https://schema.org/InStock">
               </p>
-              <a href="#product-9" class="btn btn-primary btn-sm btn-block" aria-label="View details for Ankle Boots">View Details</a>
+              <a href="#product-9" class="btn btn-primary btn-sm btn-block touch-target" aria-label="View details for Ankle Boots">View Details</a>
             </div>
           </article>
         </div>
@@ -457,7 +466,7 @@
                 <span itemprop="addressLocality">New York</span>, <span itemprop="addressRegion">NY</span> <span itemprop="postalCode">10001</span><br>
                 <span itemprop="addressCountry">United States</span>
               </address>
-              <a href="https://maps.google.com/?q=123+Fashion+Avenue+New+York+NY+10001" class="info-card-link" target="_blank" rel="noopener noreferrer" aria-label="View location on Google Maps">
+              <a href="https://maps.google.com/?q=123+Fashion+Avenue+New+York+NY+10001" class="info-card-link touch-target" target="_blank" rel="noopener noreferrer" aria-label="View location on Google Maps">
                 Get Directions →
               </a>
             </div>
@@ -490,16 +499,16 @@
               <h3 class="info-card-title">Contact Information</h3>
               <p class="info-card-text">
                 <strong>Phone:</strong><br>
-                <a href="tel:+12125551234" class="info-card-link" itemprop="telephone">+1 (212) 555-1234</a>
+                <a href="tel:+12125551234" class="info-card-link touch-target" itemprop="telephone">+1 (212) 555-1234</a>
               </p>
               <p class="info-card-text">
                 <strong>Email:</strong><br>
-                <a href="mailto:hello@fashionforward.com" class="info-card-link" itemprop="email">hello@fashionforward.com</a>
+                <a href="mailto:hello@fashionforward.com" class="info-card-link touch-target" itemprop="email">hello@fashionforward.com</a>
               </p>
               <div class="social-links" role="navigation" aria-label="Social media links">
                 <a 
                   href="https://facebook.com/fashionforward" 
-                  class="social-link" 
+                  class="social-link touch-target" 
                   aria-label="Follow us on Facebook"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -511,7 +520,7 @@
                 </a>
                 <a 
                   href="https://instagram.com/fashionforward" 
-                  class="social-link" 
+                  class="social-link touch-target" 
                   aria-label="Follow us on Instagram"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -523,7 +532,7 @@
                 </a>
                 <a 
                   href="https://twitter.com/fashionforward" 
-                  class="social-link" 
+                  class="social-link touch-target" 
                   aria-label="Follow us on Twitter"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -623,7 +632,7 @@
           
           <button 
             type="submit"
-            class="newsletter-submit"
+            class="newsletter-submit touch-target"
             aria-busy="false"
             data-newsletter-submit
           >
@@ -695,7 +704,7 @@
         <div class="footer-social" role="navigation" aria-label="Social media links">
           <a 
             href="https://facebook.com" 
-            class="social-link" 
+            class="social-link touch-target" 
             aria-label="Follow us on Facebook"
             target="_blank"
             rel="noopener noreferrer"
@@ -706,7 +715,7 @@
           </a>
           <a 
             href="https://instagram.com" 
-            class="social-link" 
+            class="social-link touch-target" 
             aria-label="Follow us on Instagram"
             target="_blank"
             rel="noopener noreferrer"
@@ -717,7 +726,7 @@
           </a>
           <a 
             href="https://twitter.com" 
-            class="social-link" 
+            class="social-link touch-target" 
             aria-label="Follow us on Twitter"
             target="_blank"
             rel="noopener noreferrer"
