@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  
+  <title>Fashion Forward | Elevate Your Style with Timeless Elegance</title>
+  <meta name="description" content="Discover curated fashion collections that blend contemporary trends with timeless elegance. Shop exclusive styles and elevate your wardrobe with Fashion Forward.">
+  
+  <meta property="og:title" content="Fashion Forward | Elevate Your Style">
+  <meta property="og:description" content="Discover curated fashion collections that blend contemporary trends with timeless elegance.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fashionforward.example.com">
+  <meta property="og:image" content="https://fashionforward.example.com/og-image.jpg">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fashion Forward | Elevate Your Style">
+  <meta name="twitter:description" content="Discover curated fashion collections that blend contemporary trends with timeless elegance.">
+  
+  <link rel="canonical" href="https://fashionforward.example.com">
+  
+  <meta name="theme-color" content="hsl(270, 45%, 45%)" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="hsl(270, 65%, 12%)" media="(prefers-color-scheme: dark)">
+  
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  
+  <script type="module" src="js/main.js" defer></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  
+  <header class="site-header" role="banner">
+    <div class="header-container">
+      <a href="/" class="site-logo" aria-label="Fashion Forward - Home">
+        Fashion Forward
+      </a>
+      
+      <nav class="site-nav" role="navigation" aria-label="Main navigation">
+        <ul class="nav-list" role="list">
+          <li class="nav-item">
+            <a href="#hero" class="nav-link active" aria-current="page">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#categories" class="nav-link">Collections</a>
+          </li>
+          <li class="nav-item">
+            <a href="#featured" class="nav-link">Featured</a>
+          </li>
+          <li class="nav-item">
+            <a href="#newsletter" class="nav-link">Newsletter</a>
+          </li>
+        </ul>
+      </nav>
+      
+      <div class="header-actions">
+        <button 
+          type="button" 
+          class="mobile-menu-toggle" 
+          aria-label="Toggle mobile menu"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+          data-mobile-menu-toggle
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <nav 
+      id="mobile-nav" 
+      class="mobile-nav" 
+      role="navigation" 
+      aria-label="Mobile navigation"
+      aria-hidden="true"
+      data-mobile-menu
+    >
+      <ul class="mobile-nav-list" role="list">
+        <li>
+          <a href="#hero" class="mobile-nav-link active" aria-current="page">Home</a>
+        </li>
+        <li>
+          <a href="#categories" class="mobile-nav-link">Collections</a>
+        </li>
+        <li>
+          <a href="#featured" class="mobile-nav-link">Featured</a>
+        </li>
+        <li>
+          <a href="#newsletter" class="mobile-nav-link">Newsletter</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main id="main" class="site-main" role="main">
+    <section id="hero" class="hero-section" aria-labelledby="hero-title">
+      <div class="hero-background" aria-hidden="true"></div>
+      
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 id="hero-title" class="text-balance">
+            Elevate Your Style with Timeless Elegance
+          </h1>
+          <p class="text-pretty">
+            Discover curated fashion collections that blend contemporary trends with classic sophistication. Express your unique style with pieces designed to make you feel confident and beautiful.
+          </p>
+          <div class="flex gap-md flex-wrap justify-center">
+            <a href="#categories" class="btn btn-primary btn-lg">
+              Explore Collections
+            </a>
+            <a href="#featured" class="btn btn-outline btn-lg">
+              View Featured Items
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="categories" class="content-section" aria-labelledby="categories-title">
+      <div class="section-container">
+        <header class="section-header">
+          <h2 id="categories-title">Shop by Category</h2>
+          <p class="section-description">
+            Explore our carefully curated collections designed to complement every aspect of your lifestyle
+          </p>
+        </header>
+        
+        <div class="grid-layout" role="list">
+          <article class="category-card" role="listitem">
+            <div class="category-image aspect-portrait">
+              <div style="background: linear-gradient(135deg, var(--color-primary-200), var(--color-primary-400)); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold);" aria-hidden="true">
+                Women
+              </div>
+            </div>
+            <div class="category-content">
+              <h3>Women's Collection</h3>
+              <p>Sophisticated styles for the modern woman</p>
+              <a href="#women" class="btn btn-ghost">Shop Women</a>
+            </div>
+          </article>
+          
+          <article class="category-card" role="listitem">
+            <div class="category-image aspect-portrait">
+              <div style="background: linear-gradient(135deg, var(--color-secondary-200), var(--color-secondary-400)); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold);" aria-hidden="true">
+                Men
+              </div>
+            </div>
+            <div class="category-content">
+              <h3>Men's Collection</h3>
+              <p>Refined elegance meets contemporary style</p>
+              <a href="#men" class="btn btn-ghost">Shop Men</a>
+            </div>
+          </article>
+          
+          <article class="category-card" role="listitem">
+            <div class="category-image aspect-portrait">
+              <div style="background: linear-gradient(135deg, var(--color-accent-200), var(--color-accent-400)); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: var(--color-neutral-900); font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold);" aria-hidden="true">
+                Accessories
+              </div>
+            </div>
+            <div class="category-content">
+              <h3>Accessories</h3>
+              <p>Perfect finishing touches for any outfit</p>
+              <a href="#accessories" class="btn btn-ghost">Shop Accessories</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    
+    <section id="featured" class="content-section alternate" aria-labelledby="featured-title">
+      <div class="section-container">
+        <header class="section-header">
+          <h2 id="featured-title">Featured Products</h2>
+          <p class="section-description">
+            Handpicked selections from our latest arrivals and bestsellers
+          </p>
+        </header>
+        
+        <div class="grid-layout four-columns" role="list">
+          <article class="product-card" role="listitem">
+            <div class="product-image aspect-square">
+              <div style="background: var(--color-neutral-200); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: var(--color-neutral-600);" aria-hidden="true">
+                Product 1
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Elegant Evening Dress</h3>
+              <p class="product-price">$299.00</p>
+              <a href="#product-1" class="btn btn-primary btn-sm btn-block">View Details</a>
+            </div>
+          </article>
+          
+          <article class="product-card" role="listitem">
+            <div class="product-image aspect-square">
+              <div style="background: var(--color-neutral-200); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: var(--color-neutral-600);" aria-hidden="true">
+                Product 2
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Classic Tailored Suit</h3>
+              <p class="product-price">$499.00</p>
+              <a href="#product-2" class="btn btn-primary btn-sm btn-block">View Details</a>
+            </div>
+          </article>
+          
+          <article class="product-card" role="listitem">
+            <div class="product-image aspect-square">
+              <div style="background: var(--color-neutral-200); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: var(--color-neutral-600);" aria-hidden="true">
+                Product 3
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Designer Handbag</h3>
+              <p class="product-price">$399.00</p>
+              <a href="#product-3" class="btn btn-primary btn-sm btn-block">View Details</a>
+            </div>
+          </article>
+          
+          <article class="product-card" role="listitem">
+            <div class="product-image aspect-square">
+              <div style="background: var(--color-neutral-200); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: var(--color-neutral-600);" aria-hidden="true">
+                Product 4
+              </div>
+            </div>
+            <div class="product-info">
+              <h3>Luxury Watch</h3>
+              <p class="product-price">$799.00</p>
+              <a href="#product-4" class="btn btn-primary btn-sm btn-block">View Details</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    
+    <section id="newsletter" class="content-section" aria-labelledby="newsletter-title">
+      <div class="section-container">
+        <div class="container-narrow">
+          <header class="section-header">
+            <h2 id="newsletter-title">Stay in Style</h2>
+            <p class="section-description">
+              Subscribe to our newsletter for exclusive offers, style tips, and early access to new collections
+            </p>
+          </header>
+          
+          <form 
+            method="POST" 
+            action="/newsletter/subscribe" 
+            class="newsletter-form"
+            novalidate
+            aria-labelledby="newsletter-title"
+          >
+            <div class="flex flex-col gap-md">
+              <div class="field">
+                <label for="newsletter-email" class="sr-only">
+                  Email Address
+                </label>
+                <input 
+                  type="email" 
+                  id="newsletter-email" 
+                  name="email"
+                  placeholder="Enter your email address"
+                  required
+                  aria-required="true"
+                  aria-invalid="false"
+                  aria-describedby="newsletter-email-error"
+                  autocomplete="email"
+                  inputmode="email"
+                  class="newsletter-input"
+                >
+                <span id="newsletter-email-error" class="error" role="alert" aria-live="polite"></span>
+              </div>
+              
+              <div class="checkbox-wrapper">
+                <input 
+                  type="checkbox" 
+                  id="newsletter-consent" 
+                  name="consent"
+                  required
+                  aria-required="true"
+                  aria-describedby="newsletter-consent-description"
+                >
+                <label for="newsletter-consent">
+                  I agree to receive marketing communications from Fashion Forward
+                </label>
+                <span id="newsletter-consent-description" class="sr-only">
+                  You can unsubscribe at any time
+                </span>
+              </div>
+              
+              <button 
+                type="submit"
+                class="btn btn-primary btn-lg btn-block"
+                aria-busy="false"
+                aria-live="polite"
+              >
+                <span class="button-text">Subscribe Now</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="/" class="footer-logo" aria-label="Fashion Forward - Home">
+            Fashion Forward
+          </a>
+          <p class="footer-description">
+            Elevating style with curated fashion collections that blend timeless elegance with contemporary trends.
+          </p>
+        </div>
+        
+        <nav class="footer-column" aria-labelledby="footer-shop-title">
+          <h3 id="footer-shop-title" class="footer-column-title">Shop</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="#women" class="footer-link">Women's Collection</a></li>
+            <li><a href="#men" class="footer-link">Men's Collection</a></li>
+            <li><a href="#accessories" class="footer-link">Accessories</a></li>
+            <li><a href="#sale" class="footer-link">Sale</a></li>
+          </ul>
+        </nav>
+        
+        <nav class="footer-column" aria-labelledby="footer-company-title">
+          <h3 id="footer-company-title" class="footer-column-title">Company</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="#about" class="footer-link">About Us</a></li>
+            <li><a href="#contact" class="footer-link">Contact</a></li>
+            <li><a href="#careers" class="footer-link">Careers</a></li>
+            <li><a href="#press" class="footer-link">Press</a></li>
+          </ul>
+        </nav>
+        
+        <nav class="footer-column" aria-labelledby="footer-support-title">
+          <h3 id="footer-support-title" class="footer-column-title">Support</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="#shipping" class="footer-link">Shipping & Returns</a></li>
+            <li><a href="#faq" class="footer-link">FAQ</a></li>
+            <li><a href="#size-guide" class="footer-link">Size Guide</a></li>
+            <li><a href="#privacy" class="footer-link">Privacy Policy</a></li>
+          </ul>
+        </nav>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          &copy; 2024 Fashion Forward. All rights reserved.
+        </p>
+        
+        <div class="footer-social" role="navigation" aria-label="Social media links">
+          <a 
+            href="https://facebook.com" 
+            class="social-link" 
+            aria-label="Follow us on Facebook"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a 
+            href="https://instagram.com" 
+            class="social-link" 
+            aria-label="Follow us on Instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+          <a 
+            href="https://twitter.com" 
+            class="social-link" 
+            aria-label="Follow us on Twitter"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
