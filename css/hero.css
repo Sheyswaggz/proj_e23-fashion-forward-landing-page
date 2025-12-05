@@ -1,0 +1,515 @@
+/**
+ * Hero Section Styles - Fashion Forward Landing Page
+ * 
+ * Full-width hero section with responsive background image, overlay,
+ * brand messaging, and call-to-action buttons. Implements mobile-first
+ * responsive design with performance optimizations and accessibility support.
+ */
+
+/* ============================================
+   HERO SECTION CONTAINER
+   ============================================ */
+
+.hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  overflow: hidden;
+  isolation: isolate;
+  
+  /* Performance optimization */
+  contain: layout style paint;
+  content-visibility: auto;
+}
+
+/* ============================================
+   BACKGROUND IMAGE
+   ============================================ */
+
+.hero__background {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  
+  /* Performance optimization */
+  will-change: transform;
+  transform: translateZ(0);
+  
+  /* Smooth loading */
+  opacity: 0;
+  animation: fade-in var(--duration-slow) var(--ease-out) forwards;
+  animation-delay: 100ms;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ============================================
+   OVERLAY
+   ============================================ */
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    135deg,
+    hsla(270, 60%, 12%, 0.85) 0%,
+    hsla(270, 50%, 18%, 0.75) 50%,
+    hsla(340, 60%, 25%, 0.7) 100%
+  );
+  
+  /* Subtle texture overlay */
+  background-blend-mode: multiply;
+  
+  /* Smooth appearance */
+  opacity: 0;
+  animation: fade-in var(--duration-medium) var(--ease-out) forwards;
+}
+
+/* ============================================
+   CONTENT CONTAINER
+   ============================================ */
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  padding: var(--space-6);
+  max-width: var(--container-lg);
+  width: 100%;
+  text-align: center;
+  
+  /* Staggered animation */
+  opacity: 0;
+  animation: slide-up var(--duration-slow) var(--ease-elegant) forwards;
+  animation-delay: 300ms;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 640px) {
+  .hero__content {
+    padding: var(--space-8);
+    gap: var(--space-10);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero__content {
+    padding: var(--space-12);
+    gap: var(--space-12);
+  }
+}
+
+/* ============================================
+   BRAND MESSAGING
+   ============================================ */
+
+.hero__brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 50rem;
+}
+
+.hero__title {
+  font-family: var(--font-family-primary);
+  font-size: clamp(2.5rem, 5vw + 1rem, 5rem);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-neutral-50);
+  margin: 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  
+  /* Text balance for better readability */
+  text-wrap: balance;
+  
+  /* Staggered animation */
+  opacity: 0;
+  animation: slide-up var(--duration-slow) var(--ease-elegant) forwards;
+  animation-delay: 500ms;
+}
+
+.hero__tagline {
+  font-family: var(--font-family-secondary);
+  font-size: clamp(1rem, 2vw + 0.5rem, 1.5rem);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-relaxed);
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-neutral-100);
+  margin: 0;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  
+  /* Text balance for better readability */
+  text-wrap: balance;
+  
+  /* Staggered animation */
+  opacity: 0;
+  animation: slide-up var(--duration-slow) var(--ease-elegant) forwards;
+  animation-delay: 700ms;
+}
+
+@media (min-width: 768px) {
+  .hero__brand {
+    gap: var(--space-6);
+  }
+}
+
+/* ============================================
+   CALL-TO-ACTION BUTTONS
+   ============================================ */
+
+.hero__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  width: 100%;
+  max-width: 40rem;
+  
+  /* Staggered animation */
+  opacity: 0;
+  animation: slide-up var(--duration-slow) var(--ease-elegant) forwards;
+  animation-delay: 900ms;
+}
+
+@media (min-width: 640px) {
+  .hero__cta {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-6);
+  }
+}
+
+/* ============================================
+   CTA BUTTON STYLES
+   ============================================ */
+
+.hero__cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-8);
+  min-width: 200px;
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  border: var(--border-width-2) solid transparent;
+  border-radius: var(--radius-xl);
+  cursor: pointer;
+  transition: all var(--duration-base) var(--ease-elegant);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  
+  /* Prevent text selection */
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hero__cta-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  opacity: 0;
+  transition: opacity var(--duration-base) var(--ease-elegant);
+  z-index: -1;
+}
+
+.hero__cta-button:hover::before {
+  opacity: 1;
+}
+
+.hero__cta-button:focus-visible {
+  outline: 2px solid var(--color-accent-400);
+  outline-offset: 4px;
+}
+
+.hero__cta-button:active {
+  transform: translateY(2px);
+}
+
+@media (min-width: 640px) {
+  .hero__cta-button {
+    min-width: 180px;
+    padding: var(--space-5) var(--space-10);
+    font-size: var(--font-size-lg);
+  }
+}
+
+/* ============================================
+   BUTTON VARIANTS
+   ============================================ */
+
+/* Primary Button - Shoes */
+.hero__cta-button--primary {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-600) 0%,
+    var(--color-primary-700) 100%
+  );
+  color: var(--color-neutral-50);
+  border-color: var(--color-primary-600);
+  box-shadow: 0 4px 14px 0 rgba(103, 58, 183, 0.4);
+}
+
+.hero__cta-button--primary:hover {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-700) 0%,
+    var(--color-primary-800) 100%
+  );
+  border-color: var(--color-primary-700);
+  box-shadow: 0 6px 20px 0 rgba(103, 58, 183, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Secondary Button - Bags */
+.hero__cta-button--secondary {
+  background: linear-gradient(
+    135deg,
+    var(--color-secondary-600) 0%,
+    var(--color-secondary-700) 100%
+  );
+  color: var(--color-neutral-50);
+  border-color: var(--color-secondary-600);
+  box-shadow: 0 4px 14px 0 rgba(194, 24, 91, 0.4);
+}
+
+.hero__cta-button--secondary:hover {
+  background: linear-gradient(
+    135deg,
+    var(--color-secondary-700) 0%,
+    var(--color-secondary-800) 100%
+  );
+  border-color: var(--color-secondary-700);
+  box-shadow: 0 6px 20px 0 rgba(194, 24, 91, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Accent Button - Gowns */
+.hero__cta-button--accent {
+  background: linear-gradient(
+    135deg,
+    var(--color-accent-600) 0%,
+    var(--color-accent-700) 100%
+  );
+  color: var(--color-neutral-900);
+  border-color: var(--color-accent-600);
+  box-shadow: 0 4px 14px 0 rgba(245, 158, 11, 0.4);
+}
+
+.hero__cta-button--accent:hover {
+  background: linear-gradient(
+    135deg,
+    var(--color-accent-700) 0%,
+    var(--color-accent-800) 100%
+  );
+  border-color: var(--color-accent-700);
+  box-shadow: 0 6px 20px 0 rgba(245, 158, 11, 0.5);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   SCROLL INDICATOR
+   ============================================ */
+
+.hero__scroll-indicator {
+  position: absolute;
+  bottom: var(--space-8);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-neutral-100);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fade-in-bounce var(--duration-slow) var(--ease-elegant) forwards;
+  animation-delay: 1200ms;
+}
+
+@keyframes fade-in-bounce {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.hero__scroll-icon {
+  width: 24px;
+  height: 36px;
+  border: 2px solid var(--color-neutral-100);
+  border-radius: var(--radius-full);
+  position: relative;
+  animation: scroll-bounce 2s ease-in-out infinite;
+}
+
+.hero__scroll-icon::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 8px;
+  background-color: var(--color-neutral-100);
+  border-radius: var(--radius-full);
+  animation: scroll-dot 2s ease-in-out infinite;
+}
+
+@keyframes scroll-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+@keyframes scroll-dot {
+  0%, 100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateX(-50%) translateY(12px);
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY ENHANCEMENTS
+   ============================================ */
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .hero__background-image,
+  .hero__overlay,
+  .hero__content,
+  .hero__title,
+  .hero__tagline,
+  .hero__cta,
+  .hero__scroll-indicator {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  
+  .hero__cta-button:hover {
+    transform: none;
+  }
+  
+  .hero__cta-button:active {
+    transform: none;
+  }
+  
+  .hero__scroll-icon,
+  .hero__scroll-icon::before {
+    animation: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .hero__overlay {
+    background: rgba(0, 0, 0, 0.9);
+  }
+  
+  .hero__title,
+  .hero__tagline {
+    text-shadow: none;
+  }
+  
+  .hero__cta-button {
+    border-width: 3px;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  .hero {
+    min-height: auto;
+    page-break-inside: avoid;
+  }
+  
+  .hero__background,
+  .hero__overlay,
+  .hero__scroll-indicator {
+    display: none;
+  }
+  
+  .hero__content {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    color: black;
+  }
+  
+  .hero__title,
+  .hero__tagline {
+    color: black;
+    text-shadow: none;
+  }
+  
+  .hero__cta {
+    display: none;
+  }
+}
