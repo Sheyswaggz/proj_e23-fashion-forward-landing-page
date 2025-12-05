@@ -1,0 +1,435 @@
+/**
+ * Category Grid Styles - Fashion Forward Landing Page
+ * 
+ * Implements responsive three-column grid layout for product categories
+ * with card-based design, hover effects, and mobile-first responsive behavior.
+ * Optimized for visual hierarchy and user interaction.
+ */
+
+/* ============================================
+   CATEGORY SECTION LAYOUT
+   ============================================ */
+
+.categories {
+  padding-block: var(--space-fluid-xl);
+  background-color: var(--color-background);
+  position: relative;
+  isolation: isolate;
+}
+
+.categories-container {
+  width: 100%;
+  max-width: var(--container-xl);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .categories-container {
+    padding-inline: var(--space-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .categories-container {
+    padding-inline: var(--space-8);
+  }
+}
+
+/* ============================================
+   CATEGORY GRID SYSTEM
+   ============================================ */
+
+.category-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  margin-block-start: var(--space-12);
+}
+
+@media (min-width: 640px) {
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+  }
+}
+
+@media (min-width: 1024px) {
+  .category-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-10);
+  }
+}
+
+/* ============================================
+   CATEGORY CARD DESIGN
+   ============================================ */
+
+.category-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-all);
+  cursor: pointer;
+  isolation: isolate;
+  container-type: inline-size;
+  container-name: category-card;
+}
+
+.category-card:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-4px);
+}
+
+.category-card:focus-within {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .category-card {
+    transition: box-shadow var(--duration-base) var(--ease-in-out);
+  }
+  
+  .category-card:hover {
+    transform: none;
+  }
+}
+
+/* ============================================
+   CATEGORY IMAGE CONTAINER
+   ============================================ */
+
+.category-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: var(--color-neutral-100);
+}
+
+@supports not (aspect-ratio: 4 / 3) {
+  .category-image-wrapper {
+    padding-block-start: 75%;
+    position: relative;
+  }
+  
+  .category-image-wrapper > img {
+    position: absolute;
+    inset: 0;
+  }
+}
+
+.category-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform var(--duration-slow) var(--ease-elegant);
+  display: block;
+}
+
+.category-card:hover .category-image {
+  transform: scale(1.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .category-image {
+    transition: none;
+  }
+  
+  .category-card:hover .category-image {
+    transform: none;
+  }
+}
+
+/* Image loading state */
+.category-image[loading="lazy"] {
+  background: linear-gradient(
+    90deg,
+    var(--color-neutral-100) 0%,
+    var(--color-neutral-200) 50%,
+    var(--color-neutral-100) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Image overlay for better text contrast */
+.category-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  opacity: 0;
+  transition: opacity var(--duration-base) var(--ease-in-out);
+  pointer-events: none;
+}
+
+.category-card:hover .category-image-overlay {
+  opacity: 1;
+}
+
+/* ============================================
+   CATEGORY CONTENT AREA
+   ============================================ */
+
+.category-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  flex-grow: 1;
+}
+
+@media (min-width: 768px) {
+  .category-content {
+    padding: var(--space-8);
+  }
+}
+
+/* ============================================
+   CATEGORY TYPOGRAPHY
+   ============================================ */
+
+.category-title {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-text-primary);
+  margin: 0;
+  letter-spacing: var(--letter-spacing-tight);
+  transition: var(--transition-colors);
+}
+
+.category-card:hover .category-title {
+  color: var(--color-primary-600);
+}
+
+.category-description {
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin: 0;
+  flex-grow: 1;
+}
+
+/* ============================================
+   CATEGORY LINK OVERLAY
+   ============================================ */
+
+.category-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  text-decoration: none;
+  color: inherit;
+}
+
+.category-link:focus-visible {
+  outline: none;
+}
+
+.category-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 0 0 0 var(--color-primary-500);
+  transition: box-shadow var(--duration-base) var(--ease-in-out);
+}
+
+.category-link:focus-visible::after {
+  box-shadow: 0 0 0 4px var(--color-primary-500);
+}
+
+/* ============================================
+   CATEGORY ACTION BUTTON
+   ============================================ */
+
+.category-action {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary-600);
+  background-color: transparent;
+  border: var(--border-width-2) solid var(--color-primary-600);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  transition: var(--transition-all);
+  position: relative;
+  z-index: 2;
+  align-self: flex-start;
+}
+
+.category-action:hover {
+  background-color: var(--color-primary-600);
+  color: var(--color-text-inverse);
+  transform: translateX(4px);
+}
+
+.category-action:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .category-action:hover {
+    transform: none;
+  }
+}
+
+/* Action icon */
+.category-action-icon {
+  width: 1em;
+  height: 1em;
+  transition: transform var(--duration-base) var(--ease-elegant);
+}
+
+.category-action:hover .category-action-icon {
+  transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .category-action:hover .category-action-icon {
+    transform: none;
+  }
+}
+
+/* ============================================
+   CATEGORY BADGE (Optional)
+   ============================================ */
+
+.category-badge {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  z-index: 2;
+  padding: var(--space-2) var(--space-4);
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wider);
+  color: var(--color-text-inverse);
+  background-color: var(--color-accent-600);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-md);
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@container category-card (width > 300px) {
+  .category-content {
+    padding: var(--space-8);
+  }
+  
+  .category-title {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .category-description {
+    font-size: var(--font-size-md);
+  }
+}
+
+/* ============================================
+   DARK MODE SUPPORT
+   ============================================ */
+
+@media (prefers-color-scheme: dark) {
+  .category-card {
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-base);
+  }
+  
+  .category-card:hover {
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .category-image-wrapper {
+    background-color: var(--color-neutral-800);
+  }
+  
+  .category-image-overlay {
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.3) 50%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
+  }
+}
+
+/* ============================================
+   HIGH CONTRAST MODE
+   ============================================ */
+
+@media (prefers-contrast: high) {
+  .category-card {
+    border: var(--border-width-2) solid var(--color-border-dark);
+  }
+  
+  .category-title {
+    font-weight: var(--font-weight-extrabold);
+  }
+  
+  .category-action {
+    border-width: var(--border-width-4);
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+    page-break-inside: avoid;
+  }
+  
+  .category-card {
+    box-shadow: none;
+    border: var(--border-width-1) solid var(--color-border-light);
+    page-break-inside: avoid;
+  }
+  
+  .category-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .category-image-overlay,
+  .category-action {
+    display: none;
+  }
+}
