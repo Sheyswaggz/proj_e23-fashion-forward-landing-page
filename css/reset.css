@@ -1,0 +1,279 @@
+/* Modern CSS Reset - Fashion Forward Landing Page */
+/* Normalize browser defaults and establish consistent foundation */
+
+/* Box sizing reset with inheritance */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Root element defaults */
+html {
+  /* Prevent font size inflation on mobile */
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  
+  /* Smooth scrolling with reduced motion support */
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Remove default list styles */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Reset heading styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: 1.2;
+}
+
+/* Anchor element defaults */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Button reset */
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Form element defaults */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+input,
+textarea,
+select {
+  border: none;
+  background: none;
+}
+
+/* Remove default fieldset styles */
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Remove default legend styles */
+legend {
+  padding: 0;
+}
+
+/* Media element defaults - responsive images and videos */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent images from overflowing */
+img {
+  border-style: none;
+}
+
+/* SVG defaults */
+svg {
+  fill: currentColor;
+}
+
+/* Table reset */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Remove default table cell padding */
+td,
+th {
+  padding: 0;
+}
+
+/* Paragraph spacing */
+p {
+  margin: 0;
+}
+
+/* Blockquote reset */
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+/* Address element styling */
+address {
+  font-style: normal;
+}
+
+/* Pre and code element defaults */
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace;
+  font-size: 1em;
+}
+
+/* Horizontal rule reset */
+hr {
+  border: none;
+  border-top: 1px solid;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove default summary marker */
+summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Remove default dialog styles */
+dialog {
+  border: none;
+  padding: 0;
+}
+
+/* Accessibility improvements */
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Remove outline for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Hidden utility */
+[hidden] {
+  display: none !important;
+}
+
+/* Disabled state */
+[disabled] {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Remove default meter and progress styles */
+meter,
+progress {
+  appearance: none;
+  border: none;
+}
+
+/* Remove default search input styles */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+/* Remove default number input spinners */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  appearance: textfield;
+}
+
+/* Remove default date input styles */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+/* Ensure consistent textarea behavior */
+textarea {
+  resize: vertical;
+  overflow: auto;
+}
+
+/* Remove default select arrow */
+select {
+  appearance: none;
+}
+
+/* Ensure iframe responsiveness */
+iframe {
+  border: none;
+}
+```
+```
